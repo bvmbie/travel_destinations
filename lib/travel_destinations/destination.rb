@@ -14,16 +14,15 @@ class TravelDestinations::Destination
    def self.scrape
     doc = Nokogiri::HTML(open("https://www.cntraveller.com/gallery/best-holiday-destinations-2020"))
     binding.pry
-    # continue 53min here
-    # title = doc.search("div.c-figure__title").text 
-    # => "20. Kyoto, Japan19. Rijeka, Croatia18. Panama17. Rabat, Morocco16. The British Virgin Islands15. Frisian Islands, Denmark14. Qingdao, China13. Lebanon12. Portland, Maine, US11. Dakar, Senegal10. Egadi Islands, Sicily9. Paris, France8. Siargao, Philippines7. Galway, Ireland6. Kangaroo Island, Australia5. Salvador, Brazil4. Armenia3. Kyrgyzstan2. Plymouth, UK1. Pakistan19. THE TURKISH RIVIERA18. PERTH, WESTERN AUSTRALIA17. SINGAPORE16. THE SCOTTISH HIGHLANDS15. St Barth’s,Caribbean14. Mozambique13. Mumbai12. The Peloponnese, Greece11. Tahiti10. Namibia9. Patagonia8. Arles, France7. Chengdu, China6. Egypt5. Transylvania, Romania4. TASMANIA, AUSTRALIA3. New Orleans2. Valle de Guadalupe1. Matera, Italy"
-    # kyoto = p doc.css("div.c-figure__title").text[0..19]
-    # split(/\d|\./)
-    # title = doc.search("div.c-figure__title").text.split(/\d|\./).reject(&:empty?).reverse
+    # continue 53 here
+    # titles = doc.search("div.c-figure__title").text.split(/\d|\./).reject(&:empty?).reverse
+    # => [" Matera, Italy", " Valle de Guadalupe", " New Orleans", " TASMANIA, AUSTRALIA", " Transylvania, Romania", " Egypt", " Chengdu, China", " Arles, France", " Patagonia", " Namibia", " Tahiti", " The Peloponnese, Greece", " Mumbai", " Mozambique", " St Barth’s, Caribbean", " THE SCOTTISH HIGHLANDS", " SINGAPORE", " PERTH, WESTERN AUSTRALIA", " THE TURKISH RIVIERA", " Pakistan", " Plymouth, UK", " Kyrgyzstan", " Armenia", " Salvador, Brazil", " Kangaroo Island, Australia", " Galway, Ireland", " Siargao, Philippines", " Paris, France", " Egadi Islands, Sicily", " Dakar, Senegal", " Portland, Maine, US", " Lebanon", " Qingdao, China", " Frisian Islands, Denmark", " The British Virgin Islands", " Rabat, Morocco", " Panama", " Rijeka, Croatia", " Kyoto, Japan"]
+    #titles.each.with_index(1) do |value, index|
+    #puts "#{index} #{value}"
+    #end
+    
   end
   
-  def add_value_and_index(array)
-  array.map.with_index { |value, index| value + index }
-  end
+
 
 end
