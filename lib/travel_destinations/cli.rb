@@ -37,3 +37,4 @@ class TravelDestinations::CLI
       end
     end
   end
+end
