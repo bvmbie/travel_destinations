@@ -21,6 +21,13 @@ class TravelDestinations::Destination
     # titles_list
   end
   
+  def self.descriptions
+    doc = Nokogiri::HTML(open("https://www.cntraveller.com/gallery/best-holiday-destinations-2020"))
+    binding.pry
+    # descriptions = doc.search("h3.bb-h3").text
+    
+  end
+  
     # continue 54 here
 
 end
